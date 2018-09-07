@@ -76,7 +76,9 @@ public class SendThread extends Thread {
 
     public void initSendThread() {
         queryLastedTransaction = tDao.queryLastedTransaction();
+        Log.w("happy", queryLastedTransaction.toString());
         String [] str = queryLastedTransaction.getFoodIDs().split(" ");
+        Log.w("happy", String.valueOf(str));
         int[] foodIDs = new int[str.length];
         List<Integer> counterSet1 = new ArrayList<Integer>();//存储counter1要取的货的positionID
         List<Integer> counterSet2 = new ArrayList<Integer>();//存储counter2要取的货的positionID
